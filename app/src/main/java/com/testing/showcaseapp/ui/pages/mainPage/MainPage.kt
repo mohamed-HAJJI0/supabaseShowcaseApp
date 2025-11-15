@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.ryples.a1_bac._01_FrenchApp._01_pages._07_authPage.AuthPageRoute
 import com.testing.showcaseapp.ui.components.buttons.PrimaryButton
+import com.testing.showcaseapp.ui.pages.successPage.SuccessPageRoute
 import kotlinx.serialization.Serializable
 
 
@@ -48,7 +49,12 @@ fun MainPage(navController: NavController) {
                     PrimaryButton(
                         text = "Auth Page",
                         onClick = {navController.navigate(AuthPageRoute)}
-                        )
+                    )
+                    Spacer(modifier = Modifier.padding(8.dp))
+                    PrimaryButton(
+                        text = "success Page",
+                        onClick = {navController.navigate(SuccessPageRoute(title = "success test"))}
+                    )
 
                 }
             }

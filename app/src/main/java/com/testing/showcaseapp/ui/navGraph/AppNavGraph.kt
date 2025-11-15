@@ -64,7 +64,7 @@ fun AppNavGraph(navController : NavHostController){
         }
         composable <SuccessPageRoute> { backStackEntry ->
             val args = backStackEntry.toRoute<SuccessPageRoute>()
-            SuccessPage(title = args.title, description = args.description)
+            SuccessPage(title = args.title,navController=navController)
         }
     }
 

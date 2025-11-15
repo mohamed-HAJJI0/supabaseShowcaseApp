@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.testing.showcaseapp.repository.AuthState
+import com.testing.showcaseapp.ui.pages.successPage.SuccessPageRoute
 import com.testing.showcaseapp.useCase.EmailAuthUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -90,7 +91,7 @@ class AuthViewModel @Inject constructor(
                 password = userData.password
             )
             if (authState == AuthState.Success){
-//                navController.navigate(MainPageRoute)
+                navController.navigate(SuccessPageRoute(title = "login success"))
             }
         }
     }
@@ -118,7 +119,7 @@ class AuthViewModel @Inject constructor(
             )
         }
         if (authState == AuthState.Success){
-//            navController.navigate(MainPageRoute)
+            navController.navigate(SuccessPageRoute(title = "register success"))
         }
     }
 
